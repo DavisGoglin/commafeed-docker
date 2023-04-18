@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM eclipse-temurin:8
 
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
