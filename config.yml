@@ -86,7 +86,7 @@ app:
 
 database:
   driverClass: org.h2.Driver
-  url: jdbc:h2:/data/db;mv_store=false
+  url: jdbc:h2:/config/db;mv_store=false
   user: sa
   password: sa
   properties:
@@ -115,10 +115,10 @@ logging:
   appenders:
     - type: console
     - type: file
-      currentLogFilename: /log/commafeed.log
+      currentLogFilename: /config/log/commafeed.log
       threshold: ALL
       archive: true
-      archivedLogFilenamePattern: /log/commafeed-%d.log
+      archivedLogFilenamePattern: /config/log/commafeed-%d.log
       archivedFileCount: 5
       timeZone: UTC
 
