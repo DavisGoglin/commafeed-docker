@@ -7,8 +7,6 @@ RUN apt-get install -y git
 
 RUN mkdir /commafeed
 RUN mkdir /config
-RUN mkdir /data
-RUN mkdir /log
 
 WORKDIR /commafeed
 
@@ -23,8 +21,6 @@ RUN git clone $COMMAFEED_GIT .
 RUN ./mvnw clean package
 
 VOLUME /config
-VOLUME /data
-VOLUME /log
 
 COPY config.yml /config/config.yml
 
