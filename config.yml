@@ -28,6 +28,14 @@ app:
   smtpTls: false
   smtpUserName: user
   smtpPassword: pass
+  
+  # Graphite Metric settings
+  # Allows those who use Graphite to have CommaFeed send metrics for graphing (time in seconds)
+  graphiteEnabled: false
+  graphitePrefix: "test.commafeed"
+  graphiteHost: "localhost"
+  graphitePort: 2003
+  graphiteInterval: 60
 
   # wether this commafeed instance has a lot of feeds to refresh
   # leave this to false in almost all cases
@@ -58,6 +66,9 @@ app:
 
   # announcement string displayed on the main page
   announcement:
+  
+  # user-agent string that will be used by the http client, leave empty for the default one
+  userAgent:
 
 # Database connection
 # -------------------
@@ -81,6 +92,9 @@ database:
   properties:
     charSet: UTF-8
   validationQuery: "/* CommaFeed Health Check */ SELECT 1"
+  minSize: 1
+  maxSize: 50
+  maxConnectionAge: 30m
 
 server:
   applicationConnectors:
@@ -93,10 +107,11 @@ server:
 logging:
   level: INFO
   loggers:
-    com.commafeed: DEBUG
+    com.commafeed: INFO
     liquibase: INFO
-    org.hibernate.SQL: INFO # or ALL for sql debugging
-    org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: WARN
+    io.dropwizard.server.ServerFactory: INFO
+    org.hibernate.orm.deprecation: "OFF"
+    # org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: WARN
   appenders:
     - type: console
     - type: file
