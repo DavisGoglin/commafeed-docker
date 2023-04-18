@@ -2,6 +2,13 @@
 
 The aim of this repository is to deploy CommaFeed using Docker.
 
+
+## Fork
+
+Re-format the docker image to store important files in /config, in the style of linuxserver.io. 
+
+##
+
 This is an unofficial image.
 
 [Commafeed](https://github.com/Athou/commafeed) is a Google Reader inspired self-hosted RSS reader, based on Dropwizard and AngularJS.
