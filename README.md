@@ -1,3 +1,5 @@
+# Archived in favor of official image
+
 # CommaFeed
 
 The aim of this repository is to deploy CommaFeed using Docker.
